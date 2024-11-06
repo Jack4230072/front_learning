@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quote of the day</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 
@@ -13,7 +15,29 @@
         <h2>Quote of the day</h2>
         <blockquote>Loading...</blockquote>
         <span>Loading...</span>
+        <div>
+            <button>New Quote</button>
+            <button> <img src="twitter.png">Tweet</button>
+        </div>
     </div>
-    
+
+    <script>
+
+
+        const api_url = "https://api.quotable.io/random";
+        async function getQuote(url) {
+            const response = await fetch(url);
+            var data = await response.json();
+
+            console.log(data);
+
+        }
+
+        getQuote(api_url);
+
+
+    </script>
+
 </body>
+
 </html>
